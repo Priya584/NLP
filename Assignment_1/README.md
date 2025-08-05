@@ -47,16 +47,16 @@ We tokenize Gujarati sentences into words, punctuation, and symbols using:
 pattern = r'(?:રૂા\.?|[$])\d[\d,.]*|\d[\d,.]*|[\u0A80-\u0AFF\w]+(?:-[\u0A80-\u0AFF\w]+)*|[$]|[.,\u0964!?;:()"\"'-]'
 ```
 
-#### 🧠 Regex Breakdown:
+### 🔍 Word Tokenizer Pattern Explanation
 
-| Component | What It Matches |
-|----------|------------------|
-| `(?:રૂા\.?|[$])\d[\d,.]*` | Currency like `રૂા.500` or `$500` |
-| `\d[\d,.]*` | Numbers (e.g., `12,000`, `3.14`) |
-| `[\u0A80-\u0AFF\w]+` | Gujarati characters and alphanumerics |
-| `(?:-[\u0A80-\u0AFF\w]+)*` | Supports hyphenated compounds (`પિતા-માતા`) |
-| `[$]` | Standalone currency symbol |
-| `[.,\u0964!?;:()"\"'-]` | Punctuation (Gujarati and general)
+| Pattern | Matches |
+|--------|---------|
+| `(?:રૂા\.?\|[$])\d[\d,.]*` | Currency like `રૂા.500` or `$500` |
+| `\d[\d,.]*` | Numbers like `12,000` or `3.14` |
+| `[\u0A80-\u0AFF\w]+(?:-[\u0A80-\u0AFF\w]+)*` | Gujarati words with optional hyphenation |
+| `[$]` | Standalone dollar sign |
+| `[.,\u0964!?;:()"\'-]` | Punctuation marks |
+
 
 ---
 
